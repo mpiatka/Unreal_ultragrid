@@ -1,0 +1,36 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "UltraGrid",
+	"Description": "",
+	"Category": "Media",
+	"CreatedBy": "",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "UltraGridCore",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "UltraGridEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		},
+
+	],
+        "Plugins": [
+                {
+                        "Name": "MediaIOFramework",
+                        "Enabled": true
+                }
+        ]
+}
