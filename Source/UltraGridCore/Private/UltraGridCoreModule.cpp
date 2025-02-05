@@ -20,6 +20,11 @@ void UgHandleDeleter::operator()(libug_handle *h){ if(h) libug_destroy_handle(h)
 
 void* UltraGridLib::UltraGridLibHandle = nullptr;
 
+static void LogCallback(const char* msg) {
+
+	UE_LOGFMT(LogUltraGridMediaCore, Log, "{0}", msg);
+}
+
 bool UltraGridLib::Init() {
 	// Get the base directory of this plugin
 	FString BaseDir = IPluginManager::Get().FindPlugin("UltraGrid")->GetBaseDir();
@@ -49,6 +54,8 @@ bool UltraGridLib::Init() {
 		UE_LOGFMT(LogUltraGridMediaCore, Log, "Loaded libultragrid");
 		UE_LOGFMT(LogUltraGridMediaCore, Log, "Header version: {0} Dll version: {1}", LIBULTRAGRID_HEADER_VERSION, libug_get_version());
 	}
+
+	libug_set_log_callback(LogCallback);
 
 	return UltraGridLibHandle != nullptr;
 }
