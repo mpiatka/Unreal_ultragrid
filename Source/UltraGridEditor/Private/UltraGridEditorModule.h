@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Modules/ModuleManager.h"
+#include "Styling/SlateStyle.h"
+#include "Templates/UniquePtr.h"
 
 class FUltraGridEditorModule : public IModuleInterface
 {
@@ -11,4 +13,7 @@ public:
 	virtual void ShutdownModule() override;
 
 private:
+	void RegisterStyle();
+
+	TUniquePtr<FSlateStyleSet> Style;
 };

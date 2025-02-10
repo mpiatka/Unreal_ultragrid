@@ -31,6 +31,7 @@ public class UltraGridEditor : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"UltraGridCore",
+				"Projects",
 				"RenderCore",
 				"RHI",
 				"Slate",
