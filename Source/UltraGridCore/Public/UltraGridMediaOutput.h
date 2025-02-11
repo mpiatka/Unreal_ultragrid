@@ -22,6 +22,10 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Network")
 		FString Destination = "localhost";
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Network")
+		bool FecEnabled = false;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Network")
+		FString FecConfig = "rs:200:220";
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Codec")
 		FString Compression = "libavcodec:codec=H.264:safe:bitrate=15M";

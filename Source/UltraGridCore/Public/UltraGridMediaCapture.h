@@ -21,6 +21,7 @@ class ULTRAGRIDCORE_API UUltraGridMediaCapture : public UMediaCapture{
 public:
 		FString Destination;
 		FString Compression;
+		FString FecConfig;
 		int VideoPort;
 		friend FUgSendThread;
 

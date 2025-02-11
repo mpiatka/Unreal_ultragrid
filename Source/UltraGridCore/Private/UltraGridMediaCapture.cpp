@@ -118,6 +118,10 @@ bool UUltraGridMediaCapture::InitializeCapture(){
 	ugConf.tx_port = VideoPort;
 	auto compressionAnsi = StringCast<ANSICHAR>(*Compression);
 	ugConf.compress = compressionAnsi.Get();
+	auto fecAnsi = StringCast<ANSICHAR>(*FecConfig);
+	if (!FecConfig.IsEmpty()) {
+		ugConf.fec = fecAnsi.Get();
+	}
 
 
 	ug_handle.Reset(libug_create_handle(&ugConf));

@@ -41,6 +41,9 @@ UMediaCapture* UUltraGridMediaOutput::CreateMediaCaptureImpl(){
 		Result->Destination = Destination;
 		Result->Compression = Compression;
 		Result->VideoPort = VideoPort;
+		if (FecEnabled) {
+			Result->FecConfig = FecConfig;
+		}
 	}
 	return Result;
 }
