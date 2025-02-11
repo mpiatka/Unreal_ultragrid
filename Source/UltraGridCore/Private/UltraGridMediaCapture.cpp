@@ -123,6 +123,10 @@ bool UUltraGridMediaCapture::InitializeCapture(){
 		ugConf.fec = fecAnsi.Get();
 	}
 
+	if (RateLimit != 0)
+		ugConf.rate_limit = RateLimit;
+
+	ugConf.mtu = Mtu;
 
 	ug_handle.Reset(libug_create_handle(&ugConf));
 	FrameQueue = MakeUnique<TCircularQueue<UgFrameUniq>>(4);

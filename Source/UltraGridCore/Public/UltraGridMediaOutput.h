@@ -24,7 +24,7 @@ public:
 		FString Destination = "localhost";
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Network")
 		bool FecEnabled = false;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Network")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Network", AdvancedDisplay)
 		FString FecConfig = "rs:200:220";
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Codec")
@@ -32,6 +32,10 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Network")
 		int VideoPort = 5004;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Network", AdvancedDisplay)
+		int Mtu = 1500;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Network", AdvancedDisplay)
+		int64 RateLimit = 0;
 
 protected:
 	virtual UMediaCapture* CreateMediaCaptureImpl() override;

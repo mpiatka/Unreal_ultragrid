@@ -23,6 +23,8 @@ public:
 		FString Compression;
 		FString FecConfig;
 		int VideoPort;
+		int64 RateLimit;
+		int Mtu;
 		friend FUgSendThread;
 
 protected:
